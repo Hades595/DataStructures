@@ -10,21 +10,21 @@ public class Stack<T> {
     }
 
     public T pop(){
-        T data = (T) dataArray[currentArraySize];
+        T data = (T) dataArray[currentArraySize-1];
         currentArraySize--;
         return data;
     }
 
     public void push(T data){
         //Check if it is full
-        if(currentArraySize <= maxSize){
+        if(currentArraySize < maxSize){
             dataArray[currentArraySize] = data;
             currentArraySize++;
         }
     }
 
     public T peak(){
-        return (T) dataArray[currentArraySize];
+        return (T) dataArray[currentArraySize-1];
     }
 
     public boolean IsEmpty(){
